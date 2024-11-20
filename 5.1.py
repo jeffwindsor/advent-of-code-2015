@@ -1,13 +1,8 @@
-Nice = True
-Naughty = False
+vowels = ['a', 'e', 'i', 'o', 'u']
 
 
 def isVowel(char):
-    return (char == 'a'
-            or char == 'e'
-            or char == 'i'
-            or char == 'o'
-            or char == 'u')
+    return (char in vowels)
 
 
 def containsAtLeastThreeVowels(input):
@@ -61,22 +56,22 @@ print(f"Rule containsNaughtyPhrase: cd is {containsNaughtyPhrase('.cd.')}")
 print(f"Rule containsNaughtyPhrase: pq is {containsNaughtyPhrase('.pq.')}")
 print(f"Rule containsNaughtyPhrase: xy is {containsNaughtyPhrase('.xy.')}")
 print(
-    f"Rule NOT containsNaughtyPhrase: asdf is {containsNaughtyPhrase('.asdf.') == False}")
+    f"Rule NOT containsNaughtyPhrase: asdf is {not containsNaughtyPhrase('.asdf.')}")
 
 print(f"Rule containsDoubleLetter: xx is {containsDoubleLetter('.aa.')}")
 print(
-    f"Rule NOT containsDoubleLetter: asdf is {containsDoubleLetter('.asdf.') == False}")
+    f"Rule NOT containsDoubleLetter: asdf is {not containsDoubleLetter('.asdf.')}")
 
 # ugknbfddgicrmopn is nice because it has at least three vowels(u...i...o...), a double letter(...dd...), and none of the disallowed substrings.
-print(f"ugknbfddgicrmopn: { main('ugknbfddgicrmopn') == Nice }")
+print(f"ugknbfddgicrmopn: { main('ugknbfddgicrmopn')}")
 # aaa is nice because it has at least three vowels and a double letter, even though the letters used by different rules overlap.
-print(f"aaa: { main('aaa') == Nice }")
+print(f"aaa: { main('aaa')}")
 # jchzalrnumimnmhp is naughty because it has no double letter.
-print(f"jchzalrnumimnmhp { main('jchzalrnumimnmhp') == Naughty}")
+print(f"jchzalrnumimnmhp { not main('jchzalrnumimnmhp')}")
 # haegwjzuvuyypxyu is naughty because it contains the string xy.
-print(f"haegwjzuvuyypxyu { main('haegwjzuvuyypxyu') == Naughty}")
+print(f"haegwjzuvuyypxyu { not main('haegwjzuvuyypxyu')}")
 # dvszwmarrgswjxmb is naughty because it contains only one vowel.
-print(f"dvszwmarrgswjxmb { main('dvszwmarrgswjxmb') == Naughty}")
+print(f"dvszwmarrgswjxmb { not main('dvszwmarrgswjxmb')}")
 print()
 
 # actuals
